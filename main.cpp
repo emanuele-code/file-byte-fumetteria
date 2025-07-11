@@ -95,7 +95,7 @@ void rimuoviFumetto() {
 
 	file.close();
 
-	auto fileSizeInt = static_cast<streamoff>(fileSize);
+	streamoff fileSizeInt = static_cast<streamoff>(fileSize);
 	off_t sizeNuova = fileSizeInt - DIM_BLOCCO;
 	if(truncate(NOME_FILE, sizeNuova) != 0) {
 		perror("truncate");
@@ -169,7 +169,7 @@ void cercaFumetto() {
 
 int main() {
 	int scelta;
-	
+
 	cout << "Inserisci scelta" << endl;
 	cout << "1. Inserisci fumetto" << endl;
 	cout << "2. Rimuovi fumetto" << endl;
